@@ -3,6 +3,7 @@ import Header from '@/components/Header/main'
 import {Baloo_2} from 'next/font/google'
 import './globals.css'
 import Container from '@/components/Container/main';
+import ModalContent from '@/components/ModalContent/main';
 
 const ballo_2 = Baloo_2({ subsets: ['latin'] });
 

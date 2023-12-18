@@ -8,12 +8,18 @@ export default function Home() {
   const [count, setCount] = useState(10)
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState<Array<any>>([])
+  const [startText, setStartText] = useState('Welcome to Easy Search!')
 
   const handleGetBooks = async () => {
     setLoading(true)
-    const res = await get_books({string: inputValue, k: count})
+    if (inputValue === '') {
+      setStartText('Vui lòng nhập input để tìm kiếm!')
+    }
+    else {
+      const res = await get_books({string: inputValue, k: count})
+      setBooks(res)
+    }
     // const res = await example_books()
-    setBooks(res)
     setLoading(false)
   }
 
@@ -59,7 +65,7 @@ export default function Home() {
           }
         </div>
       :
-        <div className='text-[50px] font-extrabold text-center text-secondaryColor'>Welcome to Easy Search!</div>
+        <div className='text-[50px] font-extrabold text-center text-secondaryColor'>{startText}</div>
       }
     </div>
   )

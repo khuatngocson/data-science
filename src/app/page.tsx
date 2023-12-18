@@ -36,7 +36,7 @@ export default function Home() {
             />
         </div>
         <div className='border-solid border-primaryBorder border-[1px] px-[30px] py-[14px] rounded-[30px]'>
-          <select className='text-[18px]' onChange={(e) => setCount(parseInt(e.target.value))}>
+          <select className='text-[18px]' onChange={(e) => setCount(parseInt(e.target.value))} value={count}>
             <option value="5">5</option>
             <option value="10" selected>10</option>
             <option value="15">15</option>
@@ -51,7 +51,7 @@ export default function Home() {
 
       {
       books.length !== 0 ? 
-        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-20 px-10'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-10'>
           {
             books.map((book: any) => {
               return <CartItem title={book.title} author={book.author} chapter={book.chapter} related_content={book.related_content} url={book.url}/>

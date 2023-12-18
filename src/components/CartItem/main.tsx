@@ -35,9 +35,9 @@ const CartItem:React.FC<CartItemProps> = ({title, author, related_content, url, 
                         <div className='font-semibold text-[18px] text-secondaryColor'>Tác giả</div>
                         <div className='font-semibold text-[18px] text-primaryColor'>{author}</div>
                     </div>
-                    <div className='flex justify-between items-center'>
+                    <div className='flex justify-between items-center gap-10'>
                         <div className='font-semibold text-[18px] text-secondaryColor'>Chapter</div>
-                        <div className='font-semibold text-[18px] text-primaryColor'>{chapter}</div>
+                        <div className='font-semibold text-[18px] text-primaryColor truncate'>{chapter}</div>
                     </div>
                     <div className='flex justify-between'>
                         <ButtonItem title='Đọc tóm tắt' handleOpenModal={handleOpenModal}/>
